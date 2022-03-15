@@ -1,0 +1,9 @@
+# postprocessing #
+*.p
+*.eps
+data/
+copy_code/
+new_data/
+resolution_tests/
+scp_dir/
+*.sh

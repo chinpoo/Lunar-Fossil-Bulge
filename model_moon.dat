@@ -1,0 +1,9 @@
+M
+ radius(m)     viscosity(pa*s)     density(kg/m^3)        mu(pa)
+ 340000.0           0                 7800.0                0
+1740000.0         1.0e22              3400.0              6.5e10
+V
+   time(Myr)     V0 (or S0)
+      0             1.0
+   4000             1.0
+    1e9             1.0
