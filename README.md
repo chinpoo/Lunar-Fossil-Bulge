@@ -9,3 +9,6 @@ A python code computing long-term viscoelastic response of a terrestial planet t
 
 other files are for plotting
 
+Reference:
+Qin, C., Zhong, S. and Phillips, R., Formation of the lunar fossil bulges and its implication for the early Earth
+and Moon, Geophys. Res. Lett., 45(3), 1286-1296, 2018.
