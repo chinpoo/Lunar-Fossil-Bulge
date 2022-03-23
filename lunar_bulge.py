@@ -33,28 +33,13 @@ L = l*(l+1)                            # l*(l+1)
 lambdas = (l+1,-l,l-1,-l-2)            # eigenvalues of A matrix
 
 model_file = "model_moon.dat"          # input file
-#model_file = "model_moon_1e21.dat"          # input file
-#model_file = "model_moon_Te.dat"          # input file
 data_dir = "./data/"
-#dumpfile = "Bulge_Q25_Te_sqrt_1.p"                     # output file for each case
-#dumpfile = "Bulge_Q50_fluid.p"                     # output file for each case
 case_num = 1
-#dumpfile = "Eta1e21_dt_1_Q100_Te_sqrt_{0:d}.p".format(case_num)
-#dumpfile = "Eta1e21_dt1x_Q100_Te_sqrt_I.p"
 dumpfile = "output_stress_1.p"
-#dump_visc = "Visc_Q100_Te_gradation_TEST_1.p"
-#dump_time = [1e7,5e7,1e8,2e8,4e8,5e8,1e9,2e9,3e9,4e9]          # time points to check output viscosity
 
 # change the values of a0 and b for different orbital evolution of the Moon...
 # orbital model parameters
 ap = 60                                # current semi-major axis in Earth radii
-#a0 = np.linspace(5,35,13)              # choise of initial Earth-Moon distance
-#a0 = np.linspace(5,15,5)              # choise of initial Earth-Moon distance
-#a0 = np.linspace(17.5,35,8)              # choise of initial Earth-Moon distance
-#a0 = np.linspace(5,28,24)
-#a0 = np.linspace(5,12,8)
-#a0 = np.linspace(13,20,8)
-#a0 = np.linspace(21,28,8)
 a0_1 = np.linspace(5,8,4)
 a0_2 = np.linspace(9,12,4)
 a0_3 = np.linspace(13,16,4)
@@ -62,13 +47,11 @@ a0_4 = np.linspace(17,20,4)
 a0_5 = np.linspace(21,24,4)
 a0_6 = np.linspace(25,28,4)
 list_a0 = [a0_1,a0_2,a0_3,a0_4,a0_5,a0_6]
-#a0 = list_a0[case_num-1]
 a0 = np.array([5,10,15,20])
+
+# power index in rotation evolution model, charaterizes time scale of orbital recession
 b = [0.1]
 #b = np.linspace(0.05,0.6,12)
-#for i in sys.argv[2:]:
-#    a0.append(float(i))
-#b = [1.0,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1]        # power index in rotation evolution model, charaterizes time scale of orbital recession
 print(a0);print(b);print(dumpfile)
 
 # control flags...

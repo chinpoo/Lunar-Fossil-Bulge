@@ -125,13 +125,11 @@ def viscosity_Te_growth_1(r,t,eta0,R0,t1,tp):
         dd[i] = d[i]
     return eta
 
-# 03/21/2017: determine viscosity from Te growth model, but with smoothed 2*Te second high viscous layer beneath
+# determine viscosity from Te growth model, but with smoothed 2*Te second high viscous layer beneath
 def viscosity_Te_growth_smooth(r,t,eta0,R0,t1,tp,flag,bot_cutoff=1e22):
     # linear Te growth model used...only two layers considered
     time_Te = np.array([t1/1e6,tp/1e6])               # two step linear growth
     d_Te = np.array([[50,150],[100,300]])          # thickness of layers at end of each step
-#    d_Te = np.array([[30,150],[60,300]])          # thickness of layers at end of each step
-#    d_Te = np.array([[80,150],[160,300]])          # thickness of layers at end of each step
     eta_Te = 1e30 
     nl,nc = d_Te.shape
     rate_Te = np.zeros(d_Te.shape)
@@ -198,10 +196,6 @@ def viscosity_Te_growth_smooth(r,t,eta0,R0,t1,tp,flag,bot_cutoff=1e22):
                 else:
                     eta[i] = (p1*(r_Te[1]-r_l[i]) + 0.5*(p1+p2)*(r_Te[0]-r_Te[1]) + p2*(r_u[i]-r_Te[0]))/(r_u[i]-r_l[i])
             sign[i] = 1
-#    if np.sum(sign)/n == 1.0:
-#        print("correct!")
-#    else:
-#        print("incorrect!!")
     eta = 10**eta
 
     return eta
@@ -220,7 +214,7 @@ def rot_potential(a0,b,t,ap,tp=time_duration):
         wsq = (ap/a)**3
     return wsq
 
-# 2017-02-10: functions for geologically constrained orbital evolution models...
+# functions for geologically constrained orbital evolution models..
 
 # compute quality factor Q from simple Q formulation
 def determine_Q(a0,a1,dt,const):
@@ -391,7 +385,6 @@ def determine_prefactor_dt_old(a0,b,ap,prefactors,tp,t_max=time_duration):
     return dt
 
 
-# !!! not used anymore!!!
 # compute semi-major axis and rotational potential as function of time, from Lambeck(1980).
 def rot_potential_old(t1,Q,t0=0.0,n=2000):
     G = 6.67e-11
